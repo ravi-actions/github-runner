@@ -23,7 +23,7 @@ resource "aws_instance" "runner" {
 resource "aws_security_group" "main" {
   name        = "${var.project}-${var.environment}-runner"
   description = "Created to attatch runner"
-  vpc_id      = "vpc-02c186cbe2fccc328"
+  vpc_id      = "vpc-0618f6141d79da029"
 
   egress {
     from_port        = 0
