@@ -4,7 +4,7 @@ resource "aws_instance" "runner" {
   ami           = local.ami_id
   instance_type = "t3.small"
   vpc_security_group_ids = [aws_security_group.main.id]
-  subnet_id = "subnet-03bf37c4dd2039178" #replace your Subnet
+  subnet_id = "subnet-062f245a4abd51af8" #replace your Subnet
 
   # need more for terraform
   root_block_device {
