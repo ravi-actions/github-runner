@@ -1,17 +1,5 @@
-data "aws_subnets" "public" {
-  filter {
-    name   = "vpc-id"
-    values = ["vpc-0618f6141d79da029"]
-  }
-
-  filter {
-    name   = "map-public-ip-on-launch"
-    values = ["true"]
-  }
-}
-
-locals {
-  public_subnet_id = element(data.aws_subnets.public.ids, 0)
+data "aws_subnet" "public" {
+  id = "subnet-062f245a4abd51af8"
 }
 
 resource "aws_instance" "runner" {
@@ -19,7 +7,7 @@ resource "aws_instance" "runner" {
   instance_type = "t3.small"
 
   vpc_security_group_ids = [aws_security_group.main.id]
-  subnet_id              = local.public_subnet_id
+  subnet_id              = data.aws_subnet.public.id
 
   root_block_device {
     volume_size = 50

@@ -8,12 +8,12 @@ variable "environment" {
 
 variable "zone_name" {
   type        = string
-  default     = "daws86s.fun"
+  default     = "raviteja.store"
   description = "description"
 }
 
 variable "zone_id" {
   type        = string
-  default     = "Z01894583A5LLRAMEST3A"
+  default     = "Z0401739DCIT2IOGQIFM"
   description = "description"
 }
